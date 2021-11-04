@@ -1,0 +1,48 @@
+﻿@model IEnumerable<bancaVi.Models.cliente>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Datos Personales</h2>
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono_cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo_cliente)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono_cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.correo_cliente)
+            </td>
+
+            <td>
+                @Html.ActionLink("Detalles", "Details", new { id = item.id_cliente }) |
+
+            </td>
+        </tr>
+    }
+
+</table>

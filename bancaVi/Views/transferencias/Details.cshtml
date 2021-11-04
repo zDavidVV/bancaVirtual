@@ -1,0 +1,50 @@
+﻿@model bancaVi.Models.transferencia
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>transferencia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Cuenta origen
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cuenta.id_cliente)
+        </dd>
+
+        <dt>
+            Cuenta destino
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cuenta1.id_cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.monto_d)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.monto_d)
+        </dd>
+
+        <dt>
+            Saldo actual
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cuenta.saldo_cuenta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Volver", "Index")
+</p>

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<bancaVi.Models.transferencia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Transferencias</h2>
+
+<p>
+    <a class="btn btn-primary" href="~/transferencias/Create" role="button">Realizar nueva transferencia</a>
+</p>
+@if (@ViewBag.sms != null)
+{
+
+    <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Alerta!</h4>
+        <p>@ViewBag.sms</p>
+    </div>
+}
+@if (@ViewBag.smserror != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Alerta!</h4>
+        <p>@ViewBag.smserror</p>
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            Cuenta Origen
+        </th>
+        <th>
+            Cuenta Destino
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.monto_d)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cuenta.id_cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cuenta1.id_cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.monto_d)
+            </td>
+            <td>
+                @Html.ActionLink("Detalles", "Details", new { id = item.id_transferencia })
+            </td>
+        </tr>
+    }
+
+</table>

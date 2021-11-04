@@ -1,0 +1,58 @@
+﻿@model bancaVi.Models.cliente
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Cedula
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_cliente)
+        <dt>
+
+            @Html.DisplayNameFor(model => model.nombre_cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono_cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono_cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.correo_cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo_cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contraseña_cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contraseña_cliente)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modificación de Datos y Cambio de contraseña", "Edit", new { id = Model.id_cliente }) |
+    @Html.ActionLink("Volver", "Index")
+</p>
